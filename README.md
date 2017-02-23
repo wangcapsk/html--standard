@@ -81,4 +81,65 @@
     <span></span>
 </p>
 ```
-嵌套规则可参考：
+嵌套规则可参考： 
+![image](https://raw.githubusercontent.com/wangcapsk/html--standard/master/pic/qt.jpg)
+# 三、注释规范
+代码注释的价值在于：方便他人调用和维护。  
+代码注释是用来解释一段代码的意图而不是行为。
+### 1、单行注释
+注释方法：注释内容前后各一个空格字符，注释位于要注释代码的上面，单独占一行。 使用场景：  
+（1）需要与前端配合，解释如何实现页面交互，如状态切换、模块切换等。  
+（2）需要后续维护的开发人员注意的要点，需要简单描述
+```
+<!-- 选中样式：给li标签添加类on -->
+<ul>
+    <li class="on"><a href="floor1">楼层1</a></li>
+    <li><a href="floor2">楼层2</a></li>
+</ul>
+```
+### 2、模块注释
+注释方法：注释内容前后各一个空格字符，<!-- Comment Text[[ --> 表示模块开始，<!-- Comment Text]] --> 表示模块结束，模块与模块之间相隔一行 使用场景：  
+（1）页面模块较多，交互复杂时，需要清晰展现页面结构。通过给每个模块添加注释，方便查找与维护。
+```
+<!-- 吸底导航[[ -->
+<!-- 展开给sale-tpl-bottom添加类sale-tpl-bottom-open -->
+<section class="sale-tpl-bottom">
+    <div class="sale-floor-main">
+        <ul class="fn-clear">
+            <li><a href="#1F" class="on">定位锚点</a></li>
+            <li><a href="#2F">定位锚点</a></li>
+        </ul>
+    </div>
+</section>
+<!-- 吸底导航]] -->
+
+<!-- 吸顶导航[[ -->
+<!-- 展开给sale-tpl-top添加类sale-tpl-top-open -->
+<section class="sale-tpl-top">
+    <div class="sale-floor-main">
+        <ul class="fn-clear">
+            <li><a href="#1F" class="on">定位锚点</a></li>
+            <li><a href="#2F">定位锚点</a></li>
+        </ul>
+    </div>
+</section>
+<!-- 吸顶导航]] -->
+```
+### 3、嵌套模块注释
+注释方法：结合以上两种注释场景，嵌套模块的注释写在模块结尾标签底部，单独一行。   
+使用场景：当模块注释内再出现模块注释的时候，为了突出主要模块
+```
+<!-- sku列表区[[ -->
+<div class="pro-main">
+    <div class="sports">
+        ...
+    </div>
+    <!-- /运动楼层 -->
+
+    <div class="watches">
+        ...
+    </div>
+    <!-- /手表楼层 -->
+</div>
+<!-- sku列表区]] -->
+```
